@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Glitch!</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://www.chapters.indigo.ca/ui/css/common-bcf16ff8a2.css">
+  </head>
+  <body>
+    <esi:include src="https://big-perch.glitch.me/header.html"/>
+    <header>
+      <h1>
+        <script>document.write(document.referrer);</script>
+      </h1>
+    </header>
+
+    <main>
+      <p class="bold">Oh hi,</p>
+      <p>Tell me your hopes and dreams:</p>
+      <form>
+        <input type="text" maxlength="100" placeholder="Dreams!">
+        <button type="submit">Submit</button>
+      </form>
+      <section class="dreams">
+        <ul id="dreams">
+        </ul>
+      </section>
+      
+      <!--esi
+      <esi:choose>
+        <esi:when test="$(HTTP_USER_AGENT{browser})=='CHROME'">
+          <input type="text" name="criteria" size="7">
+        </esi:when>
+        <esi:otherwise>
+          <input type="text" name="criteria" size="14">
+        </esi:otherwise></esi:choose>
+      -->
+      <esi:remove>
+        <input type="text" name="criteria" size="7">
+      </esi:remove>
+
+    </main>
+
+    <footer>
+      <a href="https://glitch.com">
+        Remix this in Glitch
+      </a>
+    </footer>
+    <esi:include src="https://big-perch.glitch.me/footer.html"/>
+    <!-- Your web-app is https, so your scripts need to be too -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+    <script src="/client.js"></script>
+
+  </body>
+</html>
