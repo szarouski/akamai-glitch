@@ -1,0 +1,8 @@
+<esi:assign name="mycookie" value="'ID0='+ $time() + '.' + $rand()
++'; path=/;'"/>
+<esi:vars>
+$add_header( 'Set-Cookie', $(mycookie) )
+</esi:vars>
+<esi:vars>
+<input type="hidden" value="$rand()"/>
+</esi:vars>
